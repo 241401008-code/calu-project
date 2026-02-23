@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT CALCULETOR </title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        
+        var a = 0
+        var ch = " "
+        function data(num) {
+            document.getElementById("ed").value += num
+        }
+        function opr(s) {
+            a = parseInt(document.getElementById("ed").value)
+            document.getElementById("ed").value = " "
+            ch = s
+        }
+        function result() {
+            var b = parseInt(document.getElementById("ed").value)
+            var c = 0
+            if (ch == '+' )
+                c = a + b
+
+            if (ch == '-' )
+                c = a - b
+            if (ch == '*')
+                c = a * b
+            if (ch == '/ ')
+                c = a / b
+            document.getElementById("ed").value = c
+
+        }
+        function cl() {
+            document.getElementById("ed").value = ""
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"
+                style="border: 1px solid wheat; padding: 20px; background: transparent; border-radius: 10px; box-shadow: 0px 3px 15px rgb(113,115,119,0.5);">
+                <!-- row 1 -->
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="0" id="ed">
+                    </div>
+                </div>
+                <!-- row 2 -->
+                <div class="row">
+                    <div class="col">
+                        <button onclick="cl()">AC</button>
+                        <button onclick="cl()">DEL</button>
+                        <button onclick="opr('%')">%</button>
+                        <button onclick="opr('/')">/</button>
+
+                    </div>
+                </div>
+                <!-- row 3 -->
+                <div class="row">
+                    <div class="col">
+                        <button onclick="data('7')">7</button>
+                        <button onclick="data('8')">8</button>
+                        <button onclick="data('9')">9</button>
+                        <button onclick="opr('*')">*</button>
+
+                    </div>
+                </div>
+                <!-- row 4 -->
+                <div class="row">
+                    <div class="col">
+                        <button onclick="data('4')">4</button>
+                        <button onclick="data('5')">5</button>
+                        <button onclick="data('6')">6</button>
+                        <button onclick="opr('-')">-</button>
+
+                    </div>
+                </div>
+                <!-- row 5 -->
+                <div class="row">
+                    <div class="col">
+                        <button onclick="data('1')">1</button>
+                        <button onclick="data('2')">2</button>
+                        <button onclick="data('3')">3</button>
+                        <button onclick="opr('+')">+</button>
+
+                    </div>
+                </div>
+                <!-- row 6 -->
+                <div class="row">
+                    <div class="col">
+                        <button onclick="data('00')">00</button>
+                        <button onclick="data('0')">0</button>
+                        <button onclick="data('.')">.</button>
+                        <button onclick="result()">=</button>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
